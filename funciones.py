@@ -74,6 +74,6 @@ def vut(archivo):
     vut = pd.read_csv(('./data/'+ archivo + '.csv'), sep=';', encoding='latin-1')
     vut = vut.set_index('CIUDADES')
     for columna in vut.iloc[:,:-1]:
-        vut[columna] = vut[columna].str.replace(',','').astype(float)
+        vut[columna] = vut[columna].str.replace(',','').astype(int)
     vut.iloc[:,-1] = vut.iloc[:,-1].str.replace(',','.').astype(float)
     return vut
