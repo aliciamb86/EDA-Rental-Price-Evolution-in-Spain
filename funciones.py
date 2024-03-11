@@ -77,3 +77,18 @@ def vut(archivo):
         vut[columna] = vut[columna].str.replace(',','').astype(int)
     vut.iloc[:,-1] = vut.iloc[:,-1].str.replace(',','.').astype(float)
     return vut
+
+def ipap(archivo):
+    ipap = pd.read_csv(('./data/'+ archivo + '.csv'), sep=';', encoding='latin-1')[::-1]
+    ipap = ipap.drop(columns=['Modalidad: Nivel 1','Modalidad: Nivel 2'])
+    ipap = ipap.set_index('Periodo')
+    for columna in ipap:
+        ipap[columna] = ipap[columna].str.replace(',','.').astype(float)
+    return ipap
+
+def alq_madrid(archivo):
+    alq_mad = pd.read_csv(('./data/'+ archivo + '.csv'), sep=';', encoding='latin-1').iloc[2:122,:][::-1]
+    alq_mad = alq_mad.set_index('Mes')
+    for columna in alq_mad:
+        alq_mad[columna] = alq_mad[columna].str.replace('/m2','').str.replace('%','').str.replace(',','.').astype(float)
+    return alq_mad
