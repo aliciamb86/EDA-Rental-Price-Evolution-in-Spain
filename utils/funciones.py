@@ -1,5 +1,5 @@
-import numpy as np 
 import pandas as pd 
+import folium
 
 def object_float_injuve(df):
     for columna in df.iloc[:,1:]:
@@ -92,3 +92,23 @@ def alq_madrid(archivo):
     for columna in alq_mad:
         alq_mad[columna] = alq_mad[columna].str.replace('/m2','').str.replace('%','').str.replace(',','.').astype(float)
     return alq_mad
+
+def mapas_airbnb(archivo):
+    airbnb = pd.read_csv('../data/'+archivo+'.csv')
+    # airbnb = airbnb[airbnb['neighbourhood_group'] == 'Centro']
+    airbnb = airbnb[['latitude','longitude']]
+
+    dict_airbnb = {}
+    for i in range(len(airbnb)):
+        dict_airbnb[i] = [airbnb.iloc[i,0], airbnb.iloc[i,1]]
+    dict_airbnb
+
+    # create map
+    map_cities = folium.Map(location=[40.4165, -3.70256], zoom_start=20)
+
+    # plot locations
+    for i in dict_airbnb.items():
+        folium.Marker(location=i[1], popup=i[0]).add_to(map_cities)
+
+ 
+    return map_cities  
