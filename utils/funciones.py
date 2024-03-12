@@ -93,7 +93,7 @@ def alq_madrid(archivo):
         alq_mad[columna] = alq_mad[columna].str.replace('/m2','').str.replace('%','').str.replace(',','.').astype(float)
     return alq_mad
 
-def mapas_airbnb(archivo):
+def mapas_airbnb(archivo,x,y):
     airbnb = pd.read_csv('../data/'+archivo+'.csv')
     # airbnb = airbnb[airbnb['neighbourhood_group'] == 'Centro']
     airbnb = airbnb[['latitude','longitude']]
@@ -104,7 +104,7 @@ def mapas_airbnb(archivo):
     dict_airbnb
 
     # create map
-    map_cities = folium.Map(location=[40.4165, -3.70256], zoom_start=20)
+    map_cities = folium.Map(location=[x, y], zoom_start=20)
 
     # plot locations
     for i in dict_airbnb.items():
