@@ -2,7 +2,6 @@
 
 # Evolución de los precios de alquiler en España, los últimos diez años
 
-Para poder realizar el anális de los precios de alquiler en España, he 
 
 1. Recopilación y limpieza de datos:
 
