@@ -108,3 +108,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 ¡Gracias por visitar el repositorio! Si tienes preguntas o sugerencias, no dudes en abrir un issue o contactarme directamente. / Thank you for visiting the repository! If you have questions or suggestions, feel free to open an issue or contact me directly.
 
+## 📧 Contacto / Contact
+
+Para preguntas, contacta a **Alicia MB** a través de [LinkedIn](https://www.linkedin.com/in/aliciamart%C3%ADnez-ds/).  
+For inquiries, contact **Alicia MB** via [LinkedIn](https://www.linkedin.com/in/aliciamart%C3%ADnez-ds/).  
